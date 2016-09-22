@@ -45,8 +45,58 @@ class AddKidViewController: UIViewController {
     }
     
     @IBAction func addKid(_ sender: AnyObject) {
+        var request = URLRequest(url: URL(string: "http://coptdevs.org/LittleOnes/addKid.php")!)
+        request.httpMethod = "POST"
+        var postString = "classroomID=\(classroomID)"
+        if let first = firstName.text {
+            postString += "&firstname=\(first)"
+        }
+        if let last = lastName.text{
+            postString += "&lastname=\(last)"
+        }
+        if let dobStr = dob.text{
+            postString += "&dob=\(dobStr)"
+        }
+        if let phoneStr = phone.text{
+            postString += "&phone=\(phoneStr)"
+        }
+        if let emailStr = email.text{
+            postString += "&email=\(emailStr)"
+        }
+        if let notesStr = notes.text{
+            postString += "&notes=\(notesStr)"
+        }
         
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            guard let data = data, error == nil else {
+                // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func cancel(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     /*
     // MARK: - Navigation

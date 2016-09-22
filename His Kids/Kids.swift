@@ -29,6 +29,9 @@ class Kids: UITableViewController {
         self.navigationController?.setToolbarHidden(false, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getKids()
+    }
     
     func getKids(){
         var request = URLRequest(url: URL(string: "http://coptdevs.org/LittleOnes/classroomKids.php")!)

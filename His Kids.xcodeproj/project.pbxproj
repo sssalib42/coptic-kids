@@ -27,6 +27,9 @@
 		49EBE2BB1D9216450032D8C7 /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */; };
 		49EBE2BC1D9216450032D8C7 /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */; };
 		49EBE2BD1D9216450032D8C7 /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */; };
+		49EDA88E1D94A1C3002700AB /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDA88D1D94A1C3002700AB /* ImagePickerViewController.swift */; };
+		49EDA88F1D94A1C3002700AB /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDA88D1D94A1C3002700AB /* ImagePickerViewController.swift */; };
+		49EDA8901D94A1C3002700AB /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDA88D1D94A1C3002700AB /* ImagePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,7 @@
 		49A4DCF11D87A13B0072C625 /* Kid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
 		49A4DCF51D882DA90072C625 /* Kids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kids.swift; sourceTree = "<group>"; };
 		49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKidViewController.swift; sourceTree = "<group>"; };
+		49EDA88D1D94A1C3002700AB /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */,
 				49A4DCF11D87A13B0072C625 /* Kid.swift */,
 				49A4DCF51D882DA90072C625 /* Kids.swift */,
+				49EDA88D1D94A1C3002700AB /* ImagePickerViewController.swift */,
 				31363E231D1399B000CC86B9 /* Main.storyboard */,
 				31363E291D1399B000CC86B9 /* Assets.xcassets */,
 				31363E2B1D1399B000CC86B9 /* LaunchScreen.storyboard */,
@@ -299,6 +304,7 @@
 				31363E281D1399B000CC86B9 /* His_Kids.xcdatamodeld in Sources */,
 				499988C21D8791AE0025E3BB /* DataObjects.swift in Sources */,
 				31363E201D1399B000CC86B9 /* AppDelegate.swift in Sources */,
+				49EDA88E1D94A1C3002700AB /* ImagePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A4DCF71D882DA90072C625 /* Kids.swift in Sources */,
+				49EDA88F1D94A1C3002700AB /* ImagePickerViewController.swift in Sources */,
 				49EBE2BC1D9216450032D8C7 /* AddKidViewController.swift in Sources */,
 				49A4DCF31D87A13B0072C625 /* Kid.swift in Sources */,
 				31363E381D1399B000CC86B9 /* His_KidsTests.swift in Sources */,
@@ -318,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A4DCF81D882DA90072C625 /* Kids.swift in Sources */,
+				49EDA8901D94A1C3002700AB /* ImagePickerViewController.swift in Sources */,
 				49EBE2BD1D9216450032D8C7 /* AddKidViewController.swift in Sources */,
 				49A4DCF41D87A13B0072C625 /* Kid.swift in Sources */,
 				31363E431D1399B000CC86B9 /* His_KidsUITests.swift in Sources */,
