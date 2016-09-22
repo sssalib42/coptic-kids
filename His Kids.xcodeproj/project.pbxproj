@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		31363E201D1399B000CC86B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31363E1F1D1399B000CC86B9 /* AppDelegate.swift */; };
-		31363E221D1399B000CC86B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31363E211D1399B000CC86B9 /* ViewController.swift */; };
 		31363E251D1399B000CC86B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31363E231D1399B000CC86B9 /* Main.storyboard */; };
 		31363E281D1399B000CC86B9 /* His_Kids.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31363E261D1399B000CC86B9 /* His_Kids.xcdatamodeld */; };
 		31363E2A1D1399B000CC86B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31363E291D1399B000CC86B9 /* Assets.xcassets */; };
@@ -16,6 +15,18 @@
 		31363E381D1399B000CC86B9 /* His_KidsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31363E371D1399B000CC86B9 /* His_KidsTests.swift */; };
 		31363E431D1399B000CC86B9 /* His_KidsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31363E421D1399B000CC86B9 /* His_KidsUITests.swift */; };
 		31363E511D139DEE00CC86B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31363E501D139DEE00CC86B9 /* MapKit.framework */; };
+		49565DD11D8A1B0900F61297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31363E231D1399B000CC86B9 /* Main.storyboard */; };
+		49565DD21D8A1B0900F61297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31363E231D1399B000CC86B9 /* Main.storyboard */; };
+		499988C21D8791AE0025E3BB /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499988C11D8791AE0025E3BB /* DataObjects.swift */; };
+		49A4DCF21D87A13B0072C625 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4DCF11D87A13B0072C625 /* Kid.swift */; };
+		49A4DCF31D87A13B0072C625 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4DCF11D87A13B0072C625 /* Kid.swift */; };
+		49A4DCF41D87A13B0072C625 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4DCF11D87A13B0072C625 /* Kid.swift */; };
+		49A4DCF61D882DA90072C625 /* Kids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4DCF51D882DA90072C625 /* Kids.swift */; };
+		49A4DCF71D882DA90072C625 /* Kids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4DCF51D882DA90072C625 /* Kids.swift */; };
+		49A4DCF81D882DA90072C625 /* Kids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4DCF51D882DA90072C625 /* Kids.swift */; };
+		49EBE2BB1D9216450032D8C7 /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */; };
+		49EBE2BC1D9216450032D8C7 /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */; };
+		49EBE2BD1D9216450032D8C7 /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +49,6 @@
 /* Begin PBXFileReference section */
 		31363E1C1D1399AF00CC86B9 /* His Kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "His Kids.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31363E1F1D1399B000CC86B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31363E211D1399B000CC86B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31363E241D1399B000CC86B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31363E271D1399B000CC86B9 /* His_Kids.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = His_Kids.xcdatamodel; sourceTree = "<group>"; };
 		31363E291D1399B000CC86B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +61,10 @@
 		31363E421D1399B000CC86B9 /* His_KidsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = His_KidsUITests.swift; sourceTree = "<group>"; };
 		31363E441D1399B000CC86B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31363E501D139DEE00CC86B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		499988C11D8791AE0025E3BB /* DataObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
+		49A4DCF11D87A13B0072C625 /* Kid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
+		49A4DCF51D882DA90072C625 /* Kids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kids.swift; sourceTree = "<group>"; };
+		49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKidViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +118,10 @@
 			isa = PBXGroup;
 			children = (
 				31363E1F1D1399B000CC86B9 /* AppDelegate.swift */,
-				31363E211D1399B000CC86B9 /* ViewController.swift */,
+				499988C11D8791AE0025E3BB /* DataObjects.swift */,
+				49EBE2BA1D9216450032D8C7 /* AddKidViewController.swift */,
+				49A4DCF11D87A13B0072C625 /* Kid.swift */,
+				49A4DCF51D882DA90072C625 /* Kids.swift */,
 				31363E231D1399B000CC86B9 /* Main.storyboard */,
 				31363E291D1399B000CC86B9 /* Assets.xcassets */,
 				31363E2B1D1399B000CC86B9 /* LaunchScreen.storyboard */,
@@ -195,12 +212,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Samer Salib";
 				TargetAttributes = {
 					31363E1B1D1399AF00CC86B9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 9XJ9N97BCP;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -210,11 +228,13 @@
 					31363E321D1399B000CC86B9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 9XJ9N97BCP;
+						LastSwiftMigration = 0800;
 						TestTargetID = 31363E1B1D1399AF00CC86B9;
 					};
 					31363E3D1D1399B000CC86B9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 9XJ9N97BCP;
+						LastSwiftMigration = 0800;
 						TestTargetID = 31363E1B1D1399AF00CC86B9;
 					};
 				};
@@ -254,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49565DD11D8A1B0900F61297 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49565DD21D8A1B0900F61297 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A4DCF61D882DA90072C625 /* Kids.swift in Sources */,
+				49EBE2BB1D9216450032D8C7 /* AddKidViewController.swift in Sources */,
+				49A4DCF21D87A13B0072C625 /* Kid.swift in Sources */,
 				31363E281D1399B000CC86B9 /* His_Kids.xcdatamodeld in Sources */,
-				31363E221D1399B000CC86B9 /* ViewController.swift in Sources */,
+				499988C21D8791AE0025E3BB /* DataObjects.swift in Sources */,
 				31363E201D1399B000CC86B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +306,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A4DCF71D882DA90072C625 /* Kids.swift in Sources */,
+				49EBE2BC1D9216450032D8C7 /* AddKidViewController.swift in Sources */,
+				49A4DCF31D87A13B0072C625 /* Kid.swift in Sources */,
 				31363E381D1399B000CC86B9 /* His_KidsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A4DCF81D882DA90072C625 /* Kids.swift in Sources */,
+				49EBE2BD1D9216450032D8C7 /* AddKidViewController.swift in Sources */,
+				49A4DCF41D87A13B0072C625 /* Kid.swift in Sources */,
 				31363E431D1399B000CC86B9 /* His_KidsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,8 +373,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -365,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -387,8 +420,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -404,9 +439,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -423,6 +459,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Samson.His-Kids";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -438,6 +476,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Samson.His-Kids";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -449,6 +489,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Samson.His-KidsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/His Kids.app/His Kids";
 			};
 			name = Debug;
@@ -461,6 +502,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Samson.His-KidsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/His Kids.app/His Kids";
 			};
 			name = Release;
@@ -472,6 +514,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Samson.His-KidsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "His Kids";
 			};
 			name = Debug;
@@ -483,6 +526,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Samson.His-KidsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "His Kids";
 			};
 			name = Release;
@@ -506,6 +550,7 @@
 				31363E491D1399B000CC86B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31363E4A1D1399B000CC86B9 /* Build configuration list for PBXNativeTarget "His KidsTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +559,7 @@
 				31363E4C1D1399B000CC86B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31363E4D1D1399B000CC86B9 /* Build configuration list for PBXNativeTarget "His KidsUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +568,7 @@
 				31363E4F1D1399B000CC86B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
