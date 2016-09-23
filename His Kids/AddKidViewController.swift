@@ -21,9 +21,12 @@ class AddKidViewController: UIViewController {
     @IBOutlet weak var notes: UITextView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    @IBAction func takePicture(_ sender: AnyObject) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isToolbarHidden = false
         phone.keyboardType = UIKeyboardType.decimalPad
         saveButton.isEnabled = false
     }
