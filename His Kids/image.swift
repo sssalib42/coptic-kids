@@ -1,5 +1,5 @@
 //
-//  ImagePickerViewController.swift
+//  imageViewController.swift
 //  His Kids
 //
 //  Created by Saher  Salib on 9/22/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImagePickerViewController: UIImagePickerController {
+class image: UIViewController, UIImagePickerControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()

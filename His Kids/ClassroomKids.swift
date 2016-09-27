@@ -8,11 +8,10 @@
 
 import UIKit
 
-class Kids: UITableViewController {
+class ClassroomKids: UITableViewController {
 
     @IBOutlet var kidsTableView: UITableView!
     @IBOutlet weak var kidsTableViewCell: UITableViewCell!
-    @IBOutlet weak var takeAttendance: UIBarButtonItem!
     @IBOutlet weak var addKid: UIBarButtonItem!
     @IBOutlet weak var classroomTitleNavBar: UINavigationItem!
     @IBOutlet weak var addKidButton: UIBarButtonItem!
@@ -76,7 +75,7 @@ class Kids: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "kidCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "classroomKidsCell", for: indexPath)
         
         let mainData = values[(indexPath as NSIndexPath).row] as? NSDictionary
         let firstName = mainData?["firstName"] as? String
