@@ -10,8 +10,14 @@ import UIKit
 
 class AttendanceRecords: UITableViewController {
 
+    var dateFormatter: DateFormatter!;
+    var date: Date!;
+    var classroomID = 3;
+    var values: NSArray! = [];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getAttendanceRecords()
         self.navigationController?.setToolbarHidden(false, animated: true)
 
         // Uncomment the following line to preserve selection between presentations
@@ -19,6 +25,10 @@ class AttendanceRecords: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    @IBAction func done(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,14 +40,73 @@ class AttendanceRecords: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return values.count
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "attendanceRecordsCell", for: indexPath)
+        
+        let mainData = values[(indexPath as NSIndexPath).row] as? NSDictionary
+        let dateStr = mainData?["date"] as? String
+        
+//        dateFormatter!.dateFormat! = "yyyy-mm-dd"
+//        date = dateFormatter.date(from: dateStr!)!
+//        dateFormatter.dateFormat = "DD-MMM-YYYY"
+//        
+//        print("the date is: ", date)
+//        print("The fromatted date is: ", dateFormatter.string(from: date))
+//        cell.textLabel!.text = dateFormatter.string(from: date)
+
+        
+        print("the date is: ", dateStr)
+        cell.textLabel!.text = dateStr
+        
+        return cell;
+    }
+    
+    func getAttendanceRecords(){
+        var request = URLRequest(url: URL(string: "http://coptdevs.org/LittleOnes/attendanceRecords.php")!)
+        request.httpMethod = "POST"
+        let postString = "classroomID=\(classroomID)"
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
+                self.values = (json["AttendanceRecords"] as? NSArray)!
+                
+            }
+            catch let error as NSError{
+                print(error)
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        task.resume()
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

@@ -10,6 +10,9 @@ import UIKit
 
 class Attendance: UITableViewController {
 
+    
+    var values: NSArray = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,8 +37,26 @@ class Attendance: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return values.count
     }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "classroomKidsCell", for: indexPath)
+        
+        let mainData = values[(indexPath as NSIndexPath).row] as? NSDictionary
+        let firstName = mainData?["firstName"] as? String
+        let lastName = mainData?["lastName"] as? String
+        let name = firstName! + " " + lastName!
+        
+        print("the name is d", name)
+        cell.textLabel!.text = name
+        //cell.detailTextLabel!.text = mainData["dob"] as? String
+        //cell.address.text = mainData?["email"] as? String
+        //cell.phone.text = mainData?["phone"] as? String
+        
+        return cell;
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

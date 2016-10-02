@@ -46,9 +46,9 @@ class AddKid: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     func keyboardWillShow(notification: NSNotification) {
         let selectedTextView = findFirstResponder()
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if selectedTextView.bottomAnchor < keyboardSize.height{
-                selectedTextView.frame.origin.y -= keyboardSize.height
-            }NSLayoutYAxisAnchor
+            //if selectedTextView.bottomAnchor < keyboardSize.height{
+              //  selectedTextView.frame.origin.y -= keyboardSize.height
+            //}NSLayoutYAxisAnchor
         }
         
     }
