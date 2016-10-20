@@ -15,6 +15,9 @@
 		31363E381D1399B000CC86B9 /* His_KidsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31363E371D1399B000CC86B9 /* His_KidsTests.swift */; };
 		31363E431D1399B000CC86B9 /* His_KidsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31363E421D1399B000CC86B9 /* His_KidsUITests.swift */; };
 		31363E511D139DEE00CC86B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31363E501D139DEE00CC86B9 /* MapKit.framework */; };
+		494277CD1DA9CD8600DF1F7F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494277CC1DA9CD8600DF1F7F /* MainViewController.swift */; };
+		494277CE1DA9CD8600DF1F7F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494277CC1DA9CD8600DF1F7F /* MainViewController.swift */; };
+		494277CF1DA9CD8600DF1F7F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494277CC1DA9CD8600DF1F7F /* MainViewController.swift */; };
 		49565DD11D8A1B0900F61297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31363E231D1399B000CC86B9 /* Main.storyboard */; };
 		49565DD21D8A1B0900F61297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31363E231D1399B000CC86B9 /* Main.storyboard */; };
 		499988C21D8791AE0025E3BB /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499988C11D8791AE0025E3BB /* DataObjects.swift */; };
@@ -73,6 +76,7 @@
 		31363E421D1399B000CC86B9 /* His_KidsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = His_KidsUITests.swift; sourceTree = "<group>"; };
 		31363E441D1399B000CC86B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31363E501D139DEE00CC86B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		494277CC1DA9CD8600DF1F7F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		499988C11D8791AE0025E3BB /* DataObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
 		49A4DCF11D87A13B0072C625 /* Kid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
 		49A4DCF51D882DA90072C625 /* ClassroomKids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomKids.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				49A4DCF51D882DA90072C625 /* ClassroomKids.swift */,
+				494277CC1DA9CD8600DF1F7F /* MainViewController.swift */,
 				49EBE2BA1D9216450032D8C7 /* AddKid.swift */,
 				49EBCEFC1D99874700E490E4 /* AttendanceRecords.swift */,
 				49EBCF001D99891900E490E4 /* Attendance.swift */,
@@ -314,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EBCF011D99891900E490E4 /* Attendance.swift in Sources */,
+				494277CD1DA9CD8600DF1F7F /* MainViewController.swift in Sources */,
 				49A4DCF61D882DA90072C625 /* ClassroomKids.swift in Sources */,
 				49EBE2BB1D9216450032D8C7 /* AddKid.swift in Sources */,
 				49A4DCF21D87A13B0072C625 /* Kid.swift in Sources */,
@@ -336,6 +342,7 @@
 				49EDA88F1D94A1C3002700AB /* ImagePicker.swift in Sources */,
 				49EBE2BC1D9216450032D8C7 /* AddKid.swift in Sources */,
 				49A4DCF31D87A13B0072C625 /* Kid.swift in Sources */,
+				494277CE1DA9CD8600DF1F7F /* MainViewController.swift in Sources */,
 				49EBCF021D99891900E490E4 /* Attendance.swift in Sources */,
 				31363E381D1399B000CC86B9 /* His_KidsTests.swift in Sources */,
 			);
@@ -351,6 +358,7 @@
 				49EDA8901D94A1C3002700AB /* ImagePicker.swift in Sources */,
 				49EBE2BD1D9216450032D8C7 /* AddKid.swift in Sources */,
 				49A4DCF41D87A13B0072C625 /* Kid.swift in Sources */,
+				494277CF1DA9CD8600DF1F7F /* MainViewController.swift in Sources */,
 				49EBCF031D99891900E490E4 /* Attendance.swift in Sources */,
 				31363E431D1399B000CC86B9 /* His_KidsUITests.swift in Sources */,
 			);

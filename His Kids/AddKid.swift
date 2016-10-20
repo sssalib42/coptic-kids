@@ -124,7 +124,7 @@ class AddKid: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             profilePicture.contentMode = .scaleToFill
-            profilePicture.image = pickedImage
+            profilePicture.image = UIImage(data: UIImageJPEGRepresentation( pickedImage, 0.1)!)
         }
         
         picker.dismiss(animated: true, completion: nil)
@@ -166,69 +166,101 @@ class AddKid: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.present(ImagePicker, animated: true, completion: nil)
     }
     
+//    func generateBoundaryString() -> String
+//    {
+//        return "Boundary-\(UUID().uuidString)"
+//    }
     
-    @IBAction func addKid(_ sender: AnyObject) {
+//    func addKidImage(){
+//        let myUrl = URL(string: "http://coptdevs.org/LittleOnes/addKid.php");
+//        
+//        let request = NSMutableURLRequest(url:myUrl!);
+//        request.httpMethod = "POST";
+//        
+//        request.httpMethod = "POST"
+//        var postString = "classroomID=\(classroomID)"
+//        if let first = firstName.text {
+//            postString += "&firstname=\(first)"
+//        }
+//        if let last = lastName.text{
+//            postString += "&lastname=\(last)"
+//        }
+//        if let dobStr = dob.text{
+//            postString += "&dob=\(dobStr)"
+//        }
+//        if let phoneStr = phone.text{
+//            postString += "&phone=\(phoneStr)"
+//        }
+//        if let emailStr = email.text{
+//            postString += "&email=\(emailStr)"
+//        }
+//        if let notesStr = notes.text{
+//            postString += "&notes=\(notesStr)"
+//        }
+//
+//        if (profilePicture.image == nil)
+//        {
+//            return
+//        }
+//        
+//        var imageData = UIImagePNGRepresentation(profilePicture.image!)
+//        let image_data = imageData?.base64EncodedData()
+//        
+//        //let image_data = UIImagePNGRepresentation(profilePicture.image!)
+//
+//
+//        if(image_data == nil)
+//        {
+//            return
+//        }
+//
+//        let session = URLSession.shared
+//        
+//        let task = URLSession.shared.dataTask(with: request as URLRequest) {            (
+//            data, response, error) in
+//            
+//            guard let _:Data = data, let _:URLResponse = response  , error == nil else {
+//                print("error")
+//                return
+//            }
+//            
+//            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+//            
+//            print(dataString)
+//        }
+//        task.resume()       
+//    }    
+
+    func testUploadImage(){
+        let url = URL(string: "http://coptdevs.org/LittleOnes/testImageUpload.php")
         
-        var request = URLRequest(url: URL(string: "http://coptdevs.org/LittleOnes/addKid.php")!)
+        let request = NSMutableURLRequest(url: url!)
         request.httpMethod = "POST"
-        var postString = "classroomID=\(classroomID)"
-        if let first = firstName.text {
-            postString += "&firstname=\(first)"
-        }
-        if let last = lastName.text{
-            postString += "&lastname=\(last)"
-        }
-        if let dobStr = dob.text{
-            postString += "&dob=\(dobStr)"
-        }
-        if let phoneStr = phone.text{
-            postString += "&phone=\(phoneStr)"
-        }
-        if let emailStr = email.text{
-            postString += "&email=\(emailStr)"
-        }
-        if let notesStr = notes.text{
-            postString += "&notes=\(notesStr)"
-        }
-        
-        request.httpBody = postString.data(using: String.Encoding.utf8)
-        
-        
-        
-        
         
         let boundary = generateBoundaryString()
-        
         
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
         if (profilePicture.image == nil)
         {
-            return
+        return
         }
         
         let image_data = UIImagePNGRepresentation(profilePicture.image!)
         
-        
         if(image_data == nil)
         {
-            return
+        return
         }
         
-        
-        var body = Data()
+        let body = NSMutableData()
         
         let fname = "test.png"
         let mimetype = "image/png"
         
-        
-        
-        
         body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
         body.append("Content-Disposition:form-data; name=\"test\"\r\n\r\n".data(using: String.Encoding.utf8)!)
         body.append("hi\r\n".data(using: String.Encoding.utf8)!)
-        
-        
         
         body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
         body.append("Content-Disposition:form-data; name=\"file\"; filename=\"\(fname)\"\r\n".data(using: String.Encoding.utf8)!)
@@ -236,41 +268,94 @@ class AddKid: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         body.append(image_data!)
         body.append("\r\n".data(using: String.Encoding.utf8)!)
         
-        
         body.append("--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
         
+        request.httpBody = body as Data
+        let session = URLSession.shared
         
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {            (
+        data, response, error) in
         
-        request.httpBody = body
+        guard let _:Data = data, let _:URLResponse = response  , error == nil else {
+        print("error")
+        return
+        }
         
+        let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         
-        
-        let task = URLSession.shared.dataTask(with: request as URLRequest) {
-            data, response, error in
-            if error != nil {
-                print("error=\(error)")
-                return
-            }
-            guard let data = data, error == nil else {
-                // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
+        print(dataString)
         }
         task.resume()
-        self.dismiss(animated: true, completion: nil)
     }
+    
     func generateBoundaryString() -> String
     {
-        return "Boundary-\(NSUUID().uuidString)"
+        return "Boundary-\(UUID().uuidString)"
+    }
+
+    
+    
+    @IBAction func addKid(_ sender: AnyObject) {
+        
+//        var request = URLRequest(url: URL(string: "http://coptdevs.org/LittleOnes/addKid.php")!)
+//        request.httpMethod = "POST"
+//        var postString = "classroomID=\(classroomID)"
+//        if let first = firstName.text {
+//            postString += "&firstname=\(first)"
+//        }
+//        if let last = lastName.text{
+//            postString += "&lastname=\(last)"
+//        }
+//        if let dobStr = dob.text{
+//            postString += "&dob=\(dobStr)"
+//        }
+//        if let phoneStr = phone.text{
+//            postString += "&phone=\(phoneStr)"
+//        }
+//        if let emailStr = email.text{
+//            postString += "&email=\(emailStr)"
+//        }
+//        if let notesStr = notes.text{
+//            postString += "&notes=\(notesStr)"
+//        }
+//        
+//        if (profilePicture.image == nil)
+//        {
+//            return
+//        }
+//        
+//        let imageData = UIImagePNGRepresentation(profilePicture.image!)
+//        let image_data = imageData?.base64EncodedData()
+//        
+//        
+//        if let imgStr = image_data{
+//            postString += "&image=\(imgStr)"
+//        }
+//        
+//        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+//            data, response, error in
+//            if error != nil {
+//                print("error=\(error)")
+//                return
+//            }
+//            guard let data = data, error == nil else {
+//                // check for fundamental networking error
+//                print("error=\(error)")
+//                return
+//            }
+//            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+//                // check for http errors
+//                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+//                print("response = \(response)")
+//            }
+//            
+//            let responseString = String(data: data, encoding: .utf8)
+//            print("responseString = \(responseString)")
+//        }
+//        task.resume()
+        //addKidImage()
+        testUploadImage()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancel(_ sender: AnyObject) {

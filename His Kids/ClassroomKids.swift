@@ -25,7 +25,6 @@ class ClassroomKids: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = "3rd Grade"
         getKids();
-        self.navigationController?.setToolbarHidden(false, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
