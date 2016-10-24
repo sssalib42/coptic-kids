@@ -358,7 +358,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="LJp-ew-WFf">
                             <connections>
-                                <action selector="saveAttendance:" destination="5dF-Ty-NnM" id="DwE-8L-IBo"/>
+                                <action selector="Save:" destination="5dF-Ty-NnM" id="GYf-Sq-uo6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

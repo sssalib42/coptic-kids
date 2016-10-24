@@ -13,7 +13,6 @@ class Attendance: UITableViewController {
     
     var values: NSArray = []
     var classroomID = 3;
-    var workAround: [IndexPath] = []
     var count = 0
     
     override func viewDidLoad() {
@@ -161,11 +160,67 @@ class Attendance: UITableViewController {
     }
     
     @IBAction func Save(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        var present = false
+        var attendanceStr = ""
         
+        if let selected = tableView.indexPathsForSelectedRows{
+            for i in (0..<values.count){
+                present = false
+                for j in (0..<selected.count){
+                    if selected[j].row == i{
+                        present = true
+                        break
+                    }
+                }
+                if present{
+                    let mainData = values[i] as? NSDictionary
+                    let temp = mainData?["id"] as! NSNumber
+                    attendanceStr += String(describing: temp) + "++,"
+                    print("AttendanceStr is now: \(attendanceStr)")
+                }
+                else{
+                    let mainData = values[i] as? NSDictionary
+                    let temp = mainData?["id"] as! NSNumber
+                    attendanceStr += String(describing: temp) + "--,"
+                    print("AttendanceStr is now: \(attendanceStr)")
+                }
+            }
+            attendanceStr = attendanceStr.substring(to: attendanceStr.index(before: attendanceStr.endIndex))
+        }
+        sendAttendance(attendanceStr: attendanceStr)
+        self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func Cancel(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func sendAttendance(attendanceStr: String?){
+        let myUrl = URL(string: "http://coptdevs.org/LittleOnes/addAttendance.php");
+
+        let request = NSMutableURLRequest(url:myUrl!);
+        request.httpMethod = "POST";
+
+        request.httpMethod = "POST"
+        var postString = "classroomID=\(classroomID)"
+        if let attendance = attendanceStr {
+            postString += "&attendance=\(attendance)"
+        }
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {(
+            data, response, error) in
+
+            guard let _:Data = data, let _:URLResponse = response  , error == nil else {
+                print("error")
+                return
+            }
+            
+            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            
+            print(dataString)
+        }
+        task.resume()       
+
     }
     
     

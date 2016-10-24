@@ -27,6 +27,8 @@
 		49A4DCF61D882DA90072C625 /* ClassroomKids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4DCF51D882DA90072C625 /* ClassroomKids.swift */; };
 		49A4DCF71D882DA90072C625 /* ClassroomKids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4DCF51D882DA90072C625 /* ClassroomKids.swift */; };
 		49A4DCF81D882DA90072C625 /* ClassroomKids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4DCF51D882DA90072C625 /* ClassroomKids.swift */; };
+		49E7A4091DB99A3B00AD1AC9 /* His_Kids.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31363E261D1399B000CC86B9 /* His_Kids.xcdatamodeld */; };
+		49E7A40A1DB99A3B00AD1AC9 /* His_Kids.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31363E261D1399B000CC86B9 /* His_Kids.xcdatamodeld */; };
 		49EBCEFD1D99874700E490E4 /* AttendanceRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EBCEFC1D99874700E490E4 /* AttendanceRecords.swift */; };
 		49EBCEFE1D99874700E490E4 /* AttendanceRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EBCEFC1D99874700E490E4 /* AttendanceRecords.swift */; };
 		49EBCEFF1D99874700E490E4 /* AttendanceRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EBCEFC1D99874700E490E4 /* AttendanceRecords.swift */; };
@@ -345,6 +347,7 @@
 				494277CE1DA9CD8600DF1F7F /* MainViewController.swift in Sources */,
 				49EBCF021D99891900E490E4 /* Attendance.swift in Sources */,
 				31363E381D1399B000CC86B9 /* His_KidsTests.swift in Sources */,
+				49E7A4091DB99A3B00AD1AC9 /* His_Kids.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +364,7 @@
 				494277CF1DA9CD8600DF1F7F /* MainViewController.swift in Sources */,
 				49EBCF031D99891900E490E4 /* Attendance.swift in Sources */,
 				31363E431D1399B000CC86B9 /* His_KidsUITests.swift in Sources */,
+				49E7A40A1DB99A3B00AD1AC9 /* His_Kids.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
