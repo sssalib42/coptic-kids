@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class AddKid: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate {
-    var classroomID = 3
+    var classroomID = 9
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var phone: UITextField!

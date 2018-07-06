@@ -19,11 +19,11 @@ class ClassroomKids: UITableViewController {
     
     
     var values: NSArray = []
-    var classroomID = 3;
+    var classroomID = 9;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "3rd Grade"
+        self.navigationItem.title = "PK"
         getKids();
     }
     
