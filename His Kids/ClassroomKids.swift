@@ -32,7 +32,7 @@ class ClassroomKids: UITableViewController {
     }
     
     func getKids(){
-        var request = URLRequest(url: URL(string: "http://coptdevs.org/LittleOnes/classroomKids.php")!)
+        var request = URLRequest(url: URL(string: "http://coptdevs.org/SundaySchool/getServableList.php")!)
         request.httpMethod = "POST"
         let postString = "classroomID=\(classroomID)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
@@ -56,7 +56,7 @@ class ClassroomKids: UITableViewController {
             print("responseString = \(responseString)")
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
-                self.values = (json["kids"] as? NSArray)!
+                self.values = (json["servableList"] as? NSArray)!
                 
             }
             catch let error as NSError{
